@@ -54,3 +54,5 @@ class Ball:
             self.velocity_x = 0
             self.velocity_y = 0
             self.y = GROUND_Y + self.radius  # 공이 땅에 놓이도록 위치 조정
+        if collision_group == 'zombie:ball':
+            game_world.remove_object(self)
