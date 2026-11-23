@@ -46,7 +46,7 @@ def init():
     for ball in balls:
         game_world.add_collision_pairs('boy:ball', None, ball)
         game_world.add_collision_pairs('grass:ball', None, ball)
-        game_world.add_collision_pairs('zombie:ball',None, ball)
+        
         
     
 
