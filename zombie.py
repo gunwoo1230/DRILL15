@@ -60,3 +60,4 @@ class Zombie:
     def handle_collision(self, collision_group, other):
         if collision_group == 'zombie:ball':
             self.hitball += 1
+            self.y = 100
