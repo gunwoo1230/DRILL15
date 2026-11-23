@@ -191,3 +191,5 @@ class Boy:
     def handle_collision(self, collision_group, other):
         if collision_group == 'boy:ball':
             self.ball_count += 1
+        if collision_group == 'boy:zombie':
+            pass
