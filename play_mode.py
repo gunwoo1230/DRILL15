@@ -30,21 +30,28 @@ def init():
     boy = Boy()
     grass = Grass()
     balls = [Ball(random.randint(100,1500),60, 0) for _ in range(30)]
+    zombies = [Zombie() for _ in range(4)]
 
     # 게임 월드에 객체 추가
     game_world.add_oject(boy)
     game_world.add_oject(grass, 0)
     game_world.add_objects(balls, 1)
+    game_world.add_objects(zombies, 1)
     
     # 생성된 객체들의 충돌 관계를 등록
     game_world.add_collision_pairs('boy:ball', boy, None)
     game_world.add_collision_pairs('grass:ball', grass, None)
+    for zombie in zombies:
+        game_world.add_collision_pairs('zombie:ball',zombie, None)
     for ball in balls:
         game_world.add_collision_pairs('boy:ball', None, ball)
         game_world.add_collision_pairs('grass:ball', None, ball)
+        game_world.add_collision_pairs('zombie:ball',None, ball)
+        
+    
 
-    zombies = [Zombie() for _ in range(4)]
-    game_world.add_objects(zombies, 1)
+    
+    
 
 
 def pause():
