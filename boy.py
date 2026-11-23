@@ -192,4 +192,4 @@ class Boy:
         if collision_group == 'boy:ball':
             self.ball_count += 1
         if collision_group == 'boy:zombie':
-            pass
+            game_framework.running = False
